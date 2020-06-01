@@ -30,21 +30,11 @@ import random, re
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 #Add telegraph media links of profile pics that are to be used
-TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/2eab4f64ead6fbf41bf87.jpg",
-                         "https://telegra.ph/file/6bef1ffbaddc5230c2ae1.jpg",
-                         "https://telegra.ph/file/a03f035e83098a7c5bded.jpg",
-                         "https://telegra.ph/file/f0a230a30b9952f56d2cd.jpg",
-                         "https://telegra.ph/file/d00e6bb4b4a483099c992.jpg",
-                         "https://telegra.ph/file/1270ed675db61e6c84eea.jpg",
-                         "https://telegra.ph/file/32743c9389915b02fdea7.jpg",
-                         "https://telegra.ph/file/8c02a1430502bea931ff7.jpg",
-                         "https://telegra.ph/file/1ec37d367bb59ac56131d.jpg",
-                         "https://telegra.ph/file/e9aeef4fd2e3d0b9e9f24.jpg",
-                         "https://telegra.ph/file/28c242ea9f8cf32db4c21.jpg",
-                         "https://telegra.ph/file/c089426ca031d1f6297b0.jpg",
-                         "https://telegra.ph/file/a196b6c07f0a659daf058.jpg",
-                         "https://telegra.ph/file/69f19acd13b1eaf3fc120.jpg"
+TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/01cb5e40f977d17ea5114.jpg",
                         ]
+
+
+
 @borg.on(admin_cmd(pattern="cpp ?(.*)"))
 async def autopic(event):
     while True:
@@ -60,7 +50,7 @@ async def autopic(event):
     
         shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
-        current_time = datetime.now().strftime("@Sur_vivor \n \nTime: %H:%M:%S \nDate: %d/%m/%y")
+        current_time = datetime.now().strftime("@darthvade_r \n \nTime: %H:%M:%S \nDate: %d/%m/%y")
         img = Image.open(photo)
         drawn_text = ImageDraw.Draw(img)
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 23)
