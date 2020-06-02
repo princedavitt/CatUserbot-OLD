@@ -30,7 +30,7 @@ import random, re
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 #Add telegraph media links of profile pics that are to be used
-TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/01cb5e40f977d17ea5114.jpg",
+TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/523506917b5745c1ebd35.jpg",
                         ]
 
 
@@ -53,8 +53,8 @@ async def autopic(event):
         current_time = datetime.now().strftime("@darthvade_r \n \nTime: %H:%M:%S \nDate: %d/%m/%y")
         img = Image.open(photo)
         drawn_text = ImageDraw.Draw(img)
-        fnt = ImageFont.truetype(FONT_FILE_TO_USE, 23)
-        drawn_text.text((200, 250), current_time, font=fnt, fill=(230,230,250))
+        fnt = ImageFont.truetype(FONT_FILE_TO_USE, 13)
+        drawn_text.text((200, 400), current_time, font=fnt, fill=(230,230,250))
         img.save(photo)
         file = await event.client.upload_file(photo)  # pylint:disable=E0602
         try:
@@ -63,6 +63,6 @@ async def autopic(event):
             ))
             os.remove(photo)
             
-            await asyncio.sleep(30)
+            await asyncio.sleep(120)
         except:
             return
